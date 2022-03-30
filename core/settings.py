@@ -24,6 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '0q%_w$%ysprytbnz%%9_(onevk$8-151sa@#)$ri19hk+ie36a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+heroku config:set DISABLE_COLLECTSTATIC=1
 DEBUG = False
 
 ALLOWED_HOSTS = ['https://heartpredictor01.herokuapp.com/']
