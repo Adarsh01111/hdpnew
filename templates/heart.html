@@ -1,0 +1,175 @@
+{%extends 'base.html'%} {%block content%}
+
+<div class="container">
+  <div class="display-3 my-2 text-center">Heart Disease Prediction</div>
+  <hr />
+  {% if context %}
+  <div class="display-4 my-2 text-center">
+    You {{ context }} heart disease.
+  </div>
+  {% endif %}
+
+  <!-- 
+      19:46:19 09 Oct, 2019 by Arjun Adhikari
+      Form Here 
+      -->
+  <div class="mt-4">
+    <form class="row" method="POST" action="{% url 'heart' %}">
+      {% csrf_token %}
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input
+            type="number"
+            step="1"
+            class="form-control"
+            id="age"
+            value="0"
+            name="age"
+          />
+        </div>
+        <div class="form-group">
+          <label for="sex">Gender</label>
+          <select class="form-control" id="sex" name="sex" >
+            <option value="1">Male.</option>
+            <option value="0">Female.</option>
+          </select>
+            
+          
+        </div>
+        <div class="form-group">
+          <label for="cp">CP</label>
+          
+            
+          
+          
+          <select class="form-control" id="cp" name="cp" >
+            <option value="0">No Chest Pain</option>
+            <option value="1">Stable angina.</option>
+            <option value="2">Unstable angina.</option>
+            <option value="3">Vasospastic or variant angina.</option>
+            
+          </select>
+            
+            
+            
+          
+        </div>
+        <div class="form-group">
+          <label for="trestbps">TRESTBPS</label>
+          <input
+            type="number"
+            step="1"
+            class="form-control"
+            id="trestbps"
+            value="0"
+            name="trestbps"
+          />
+        </div>
+        <div class="form-group">
+          <label for="chol">CHOL</label>
+          <input
+            type="number"
+            step="1"
+            class="form-control"
+            id="chol"
+            value="0"
+            name="chol"
+          />
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="fbs">Fasting Blood Sugar</label>
+          <select class="form-control" id="fbs" name="fbs" >
+            <option value="1">More than 120mg/dl.</option>
+            <option value="0">less than 120mg/dl</option>
+          
+          </select>
+          
+        </div>
+        <div class="form-group">
+          <label for="restecg">RESTECG </label>
+          <select class="form-control" id="restecg" name="restecg" >
+            <option value="0">NO</option>
+            <option value="1">YES</option>
+            
+          </select>
+          
+        </div>
+        <div class="form-group">
+          <label for="thalach">THALACH MAX HR</label>
+          
+          <input
+            type="number"
+            step="1"
+            class="form-control"
+            id="thalach"
+            value="0"
+            name="thalach"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exang">EXANG </label>
+          <select class="form-control" id="exang" name="exang" >
+            <option value="0">NO</option>
+            <option value="1">YES</option>
+            
+          </select>
+          
+        </div>
+        <div class="form-group">
+          <label for="oldpeak">OLDPEAK</label>
+          <input
+            type="number"
+            step=".1"
+            class="form-control"
+            id="oldpeak"
+            value="0"
+            name="oldpeak"
+          />
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="slope">SLOPE</label>
+          <select class="form-control" id="slope" name="slope" >
+            <option value="0"> downsloping.</option>
+            <option value="1"> flat.</option>
+            <option value="2">noupsloping</option>
+            </select>
+         
+          
+        </div>
+        
+        <div class="form-group">
+          <label for="ca">CA</label>
+          <input
+            type="number"
+            step="1"
+            class="form-control"
+            id="ca"
+            value="0"
+            name="ca"
+          />
+        </div>
+        <div class="form-group mb-5">
+          <label for="thal">THAL</label>
+          <select class="form-control" id="thal" name="thal" >
+            <option value="0">NULL.</option>
+            <option value="1">fixed defect.</option>
+            <option value="2">normal blood flow</option>
+            <option value="3">reversible defectn</option>
+          </select>
+          
+        </div>
+
+        <button type="submit" class="btn-lg btn-block btn btn-primary mb-5">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
