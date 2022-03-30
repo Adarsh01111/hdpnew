@@ -26,7 +26,7 @@ SECRET_KEY = '0q%_w$%ysprytbnz%%9_(onevk$8-151sa@#)$ri19hk+ie36a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://diseasepredictorbyarjun.herokuapp.com/']
+ALLOWED_HOSTS = ['https://heartpredictor01.herokuapp.com/']
 
 
 # Application definition
